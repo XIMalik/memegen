@@ -55,7 +55,7 @@ function App() {
             
             
 
-            <div className='flex flex-col gap-5 justify-center items-center mt-5 w-[100%] min-w-[400px] px-5'>
+            <div className='flex flex-col gap-5 justify-center items-center mt-5 w-[100%] min-w-[400px] px-5 md:px-2'>
             <span className='w-[50px] text-sm text-center text-black rounded-full px-1 bg-slate-300'>3</span><span className='text-left'>Input some text to complete your <span className='head'>grfx</span></span>
               <input placeholder="top text" type="text" id="topText" onChange={e => setTopText(e.target.value)} className=' bg-slate-100 ease-in duration-150 hover:bg-slate-200 border-0 outline-0 rounded-lg p-2 w-[50%] min-w-[400px]'/>
               <input placeholder="bottom text" type="text" id="bottomText" onChange={e => setBottomText(e.target.value)} className='bg-slate-100 ease-in duration-150 hover:bg-slate-200 border-0 outline-0 rounded-lg p-2 w-[50%] min-w-[400px]'/>
@@ -65,7 +65,7 @@ function App() {
 
               <div className="footer bg-slate-100 w-[100%] p-5">
                 <span className='text-sm text-slate-600'>Check out my other work</span> <br />
-                <div className='flex gap-3'>
+                <div className='flex flex-wrap gap-3'>
                   <a href="https://malikawesu.netlify.app" className='ease-in duration-150 hover:text-green-100'>malikawesuportfolio</a>
                   <a href="https://malikawesu.netlify.app" className='ease-in duration-150 hover:text-green-100'>malikawesuportfolio</a>
                   <a href="https://malikawesu.netlify.app" className='ease-in duration-150 hover:text-green-100'>malikawesuportfolio</a>
