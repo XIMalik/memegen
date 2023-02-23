@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
+import { exportComponentAsJPEG } from 'react-component-export-image';
+import React, { createRef ,useRef } from 'react';
+
 
 function App() {
 
@@ -18,12 +21,13 @@ function App() {
     color: color,
   };
 
+  const memeRef = createRef()
 
 
     return (
         <div className="App flex flex-col gap-1 justify-center items-center w-[100%] bg-white mb-10">
           <div className='py-5 sticky top-0 bg-white z-10 text-center w-[100%] m-2 border-b-[0.2px] border-solid border-gradient-to-r from-blue-500 to-red-500'>
-            <h1 className=' text-slate-900 head text-5xl font-bold text- outline-1'> Memesmyn!66</h1>
+            <h1 className=' text-slate-900 head text-5xl font-bold text- outline-1'> memesmyn!66</h1>
             <span className='text-sm text-slate-600'> Troll your niggas, asap nigga</span>
           </div>
 
@@ -32,7 +36,7 @@ function App() {
               <input type="file" id="inputag" onChange={handleChange} className="hidden"/>
             </label>
           
-            <div id="meme" className='relative overflow-hidden w-[400px] h-[400px] flex justify-center items-center rounded-md bg-gradient-to-bl from-blue-900 to-slate-200 mb-5 mt-5'>
+            <div ref={memeRef} id="meme" className='relative overflow-hidden w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] flex justify-center items-center rounded-md bg-gradient-to-bl from-blue-900 to-slate-200 mb-5 mt-5'>
               <h1 id="memetext" style={mystyle} className='text-3xl uppercase absolute top-2 font-black'>{topText}</h1>
               <img src={file} className="w-[100%] object-cover"/>
               <h1 id="memetext" style={mystyle} className='text-3xl uppercase absolute bottom-2 font-black'>{bottomText}</h1>
@@ -56,8 +60,8 @@ function App() {
               <input placeholder="top text" type="text" id="topText" onChange={e => setTopText(e.target.value)} className=' bg-slate-300 ease-in duration-150 hover:bg-slate-200 border-0 outline-0 rounded-lg p-2 w-[50%] min-w-[400px]'/>
               <input placeholder="bottom text" type="text" id="bottomText" onChange={e => setBottomText(e.target.value)} className='bg-slate-300 ease-in duration-150 hover:bg-slate-200 border-0 outline-0 rounded-lg p-2 w-[50%] min-w-[400px]'/>
             </div>
-            
-  
+              
+              <button onClick={(e) => exportComponentAsJPEG(memeRef)}>Save</button>
         </div>
   
   )
