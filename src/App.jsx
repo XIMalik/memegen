@@ -61,13 +61,11 @@ function App() {
               <input placeholder="bottom text" type="text" id="bottomText" onChange={e => setBottomText(e.target.value)} className='bg-slate-100 ease-in duration-150 hover:bg-slate-200 border-0 outline-0 rounded-lg p-2 w-[50%] min-w-[400px]'/>
             </div>
               
-              <button className=' py-3 bg-slate-900 text-green-100 rounded-xl mt-5 min-w-[400px] ease-in duration-150 hover:bg-slate-800 mb-10' onClick={(e) => exportComponentAsJPEG(memeRef)}>Download your <span className='head'>grfx</span></button>
+              <button className=' py-3 bg-slate-900 text-green-100 rounded-xl mt-5 min-w-[400px] ease-in duration-150 hover:bg-slate-800 mb-20' onClick={(e) => exportComponentAsJPEG(memeRef)}>Download your <span className='head'>grfx</span></button>
 
               <div className="footer bg-slate-100 w-[100%] p-5">
-                <span className='text-sm text-slate-600'>Check out my other work</span> <br />
+                <span className='text-sm text-slate-600 py-5'>Check out my other work</span> <br />
                 <div className='flex flex-wrap gap-3'>
-                  <a href="https://malikawesu.netlify.app" className='ease-in duration-150 hover:text-green-100'>malikawesuportfolio</a>
-                  <a href="https://malikawesu.netlify.app" className='ease-in duration-150 hover:text-green-100'>malikawesuportfolio</a>
                   <a href="https://malikawesu.netlify.app" className='ease-in duration-150 hover:text-green-100'>malikawesuportfolio</a>
                 </div>
               </div>
