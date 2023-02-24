@@ -27,7 +27,7 @@ function App() {
     return (
         <div className="App flex flex-col gap-1 justify-center items-center w-[100%] bg-white">
           <div className='py-5 sticky top-0 bg-white z-10 text-center w-[100%] m-2 border-b-[0.2px] border-solid border-gradient-to-r from-blue-500 to-red-500'>
-            <h1 className=' text-slate-900 head text-5xl font-bold text- outline-1'> grfxmyn!66</h1>
+            <h1 className=' text-slate-900 head text-5xl font-bold text- outline-1'> grfxn!66</h1>
             <span className='text-sm text-slate-600'> Troll niggas</span>
           </div>
 
