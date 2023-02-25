@@ -33,14 +33,16 @@ export default function Edit () {
         <h1 className='head text-center text-2xl md:text-4xl'>Now, create your masterpiece</h1>
         </div>
     
-        <div className="grid md:grid-cols-2 p-10 gap-10 mb-10">
-            <div className='colspan-1 flex justify-center items-center bg-black text-center py-5 w-[100%] h-[100%]'>
+        <div className="grid md:grid-cols-2 p-10 mb-10">
+            <div className='colspan-1 flex justify-center items-center bg-gradient-to-r from-red-900 to-black text-center py-5 w-[100%] h-[100%]'>
                 <div ref={memeRef} className="w-fit relative mx-auto my-auto">
                     <Draggable>
                         <h1 id="memetext" style={mystyle} className='text-3xl uppercase absolute top-2 font-black'>{topText}</h1>
                     </Draggable>
                     <img src={params.get("url")} alt="" className='w-[300px] m-auto' />
+                    <Draggable>
                     <h1 id="memetext" style={mystyle} className='text-3xl uppercase absolute bottom-2 font-black'>{bottomText}</h1>
+                    </Draggable>
 
                     {
                         // Array(count).fill(0).map(e => <Text style={mystyle} />)
@@ -60,7 +62,7 @@ export default function Edit () {
                         <span className='text-sm'>Change text color<span className='text-slate-300'>if need be</span></span>
                         <div className=' flex gap-5'>
                         <button onClick={() => setColor("green")} className="bg-green-600 w-[25px] h-[25px] "></button>
-                        <button onClick={() => setColor(["red"])} className="bg-red-600 w-[25px] h-[25px] "></button>
+                        <button onClick={() => setColor("red")} className="bg-red-600 w-[25px] h-[25px] "></button>
                         <button onClick={() => setColor("blue")} className="bg-blue-600 w-[25px] h-[25px] "></button>
                         <button onClick={() => setColor("white")} className="bg-white border-[0.5px] border-solid w-[25px] h-[25px]"></button>
                         <button onClick={() => setColor("purple")} className="bg-purple-500 border-[0.5px] border-solid w-[25px] h-[25px]"></button>
