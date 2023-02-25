@@ -13,7 +13,7 @@ export default function Memecard(props) {
         </div>
         <button 
         onClick={e => nav(`/edit?url=${props.img}`)}
-        className=" absolute b-10 bg-black/10 ease-in-out duration-150 text-white px-4 py-2 hover:bg-white/50 mb-3 rounded-full">customize</button>
+        className=" absolute b-10 bg-black/10 ease-in-out duration-150 text-white px-4 py-2 hover:bg-white/50 mb-3">customize</button>
     </div>
   )
 }

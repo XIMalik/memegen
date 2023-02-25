@@ -3,6 +3,7 @@ import { getAllMemes } from '../../api';
 import Memecard from '../../components/Meme';
 import Header from '../../components/Header';
 import './m.css'
+import Footer from '../../components/Footer';
 
 export default function Memes () {
 
@@ -21,6 +22,7 @@ export default function Memes () {
             data.map( i => <Memecard title={i.name} img={i.url}/>)
         }
     </div>
+    <Footer />
     </div>
   )
 }

@@ -6,7 +6,7 @@ export default function Text() {
     const [editmode, setEditmode] = useState(false)
     const [v, setV] = useState("Double click to edit")
   return (
-    <Draggable className>
+    <Draggable>
         {
         editmode ? (
         <input className='bg-none w-fit h-fit' onDoubleClick={e => setEditmode(false)} value={v} onChange={e => setV(e.target.value)}/>
