@@ -19,10 +19,12 @@ export default function Edit () {
     const addText = () => {setCount(count + 1)}
 
     const memeRef = createRef();
-
+    
     const [color, setColor] = useState("black");
+    const [size, setSize] = useState(12)
     const mystyle = {
       color: color,
+      fontSize: size,
     };
 
   return (
@@ -35,7 +37,7 @@ export default function Edit () {
     
         <div className="grid md:grid-cols-2 p-10 mb-10">
             <div className='colspan-1 flex justify-center items-center bg-gradient-to-r from-red-900 to-black text-center py-5 w-[100%] h-[100%]'>
-                <div ref={memeRef} className="w-fit relative mx-auto my-auto">
+                <div ref={memeRef} className="w-fit relative mx-auto my-auto overflow-hidden">
                     <Draggable>
                         <h1 id="memetext" style={mystyle} className='text-3xl uppercase absolute top-2 font-black'>{topText}</h1>
                     </Draggable>
@@ -56,19 +58,31 @@ export default function Edit () {
                 <div className='flex flex-col gap-5 justify-center items-center mt-5 w-[100%] max-w-[600px] px-5 md:px-2'>
                         <input placeholder="top text" type="text" id="topText" onChange={e => setTopText(e.target.value)} className=' bg-slate-100 ease-in duration-150 hover:bg-slate-200 border-0 outline-0 p-2 w-[50%] min-w-[250px]'/>
                         <input placeholder="bottom text" type="text" id="bottomText" onChange={e => setBottomText(e.target.value)} className='bg-slate-100 ease-in duration-150 hover:bg-slate-200 border-0 outline-0 p-2 w-[50%] min-w-[250px]'/>
-                    </div>
+                </div>
                 
+                <div className=' flex flex-col justify-center my-5 items-center gap-3'>
+                        <span className='text-slate-600 text-sm'>Change the font size <span className='text-xs text-slate-400'>if need be</span></span>
+                            <div className='flex justify-center w-fit gap-8 sm:gap-8 py-2'>
+                            <button onClick={() => setSize(18)} className="head hover:bg-black hover:text-white w-[25px] h-[25px]">1</button>
+                            <button onClick={() => setSize(28)} className="head hover:bg-black hover:text-white w-[25px] h-[25px]">2</button>
+                            <button onClick={() => setSize(38)} className="head hover:bg-black hover:text-white w-[25px] h-[25px]">3</button>
+                            <button onClick={() => setSize(48)} className="head hover:bg-black hover:text-white w-[25px] h-[25px]">4</button>
+                            <button onClick={() => setSize(58)} className=" head hover:bg-black hover:text-white w-[25px] h-[25px]">5</button>
+                            
+                            </div>
+                        </div>
+
                 <div className='flex flex-col justify-center gap-8 sm:gap-8 py-2'>
-                        <span className='text-sm'>Change text color<span className='text-slate-300'>if need be</span></span>
+                        <span className='text-sm'>Change text color <span className='text-slate-300'>if need be</span></span>
                         <div className=' flex gap-5'>
-                        <button onClick={() => setColor("green")} className="bg-green-600 w-[25px] h-[25px] "></button>
-                        <button onClick={() => setColor("red")} className="bg-red-600 w-[25px] h-[25px] "></button>
-                        <button onClick={() => setColor("blue")} className="bg-blue-600 w-[25px] h-[25px] "></button>
-                        <button onClick={() => setColor("white")} className="bg-white border-[0.5px] border-solid w-[25px] h-[25px]"></button>
-                        <button onClick={() => setColor("purple")} className="bg-purple-500 border-[0.5px] border-solid w-[25px] h-[25px]"></button>
-                        <button onClick={() => setColor("yellow")} className="bg-yellow-500 border-[0.5px] border-solid w-[25px] h-[25px]"></button>
+                            <button onClick={() => setColor("green")} className="bg-green-600 w-[25px] h-[25px] "></button>
+                            <button onClick={() => setColor("red")} className="bg-red-600 w-[25px] h-[25px] "></button>
+                            <button onClick={() => setColor("blue")} className="bg-blue-600 w-[25px] h-[25px] "></button>
+                            <button onClick={() => setColor("white")} className="bg-white border-[0.5px] border-solid w-[25px] h-[25px]"></button>
+                            <button onClick={() => setColor("purple")} className="bg-purple-500 border-[0.5px] border-solid w-[25px] h-[25px]"></button>
+                            <button onClick={() => setColor("yellow")} className="bg-yellow-500 border-[0.5px] border-solid w-[25px] h-[25px]"></button>
                         </div>
-                        </div>
+                </div>
 
                 {/* <button onClick={addText} className="min-w-[300px] bg-black px-5 py-2 w-[50%] ease-in-out duration-300 hover:bg-slate-900 text-white">add text</button><br /> */}
                 <button onClick={(e) => exportComponentAsJPEG(memeRef)} className=" text-sm min-w-[300px] mt-10 bg-black px-6 py-2 w-[50%] ease-in-out duration-300 text-white hover:bg-red-900">Download your custom <span className='head'>grfx</span></button>

@@ -22,9 +22,9 @@ export default function Home() {
                 <span className='head text-4xl sm:text-5xl'>Make a choice</span>
             </div>
             <div className='flex flex-col gap-6 md:flex-row justify-center md:gap-12 mt-10'>
-                    <button onClick={goo} className='bg-green-500 p-5 ease-in duration-75 hover:bg-black text-white'><span>Be a hero and create an original</span></button>
+                    <button onClick={goo} className='bg-black p-5 hover:bg-white hover:text-black text-white hover:border-black/90 border-[0.5px]'><span>Be a <span className='head'>don</span> and create an original</span></button>
                 
-                <button onClick={go} className='bg-red-500 p-5 ease-in duration-75 hover:bg-black text-white'><span>Be a reggie and work with an existence</span></button>
+                <button onClick={go} className='bg-white p-5 hover:bg-black hover:text-white text-black border-black/90 border-[0.5px] '><span>Take me to the <span className='head text-red-900'>gallery</span></span></button>
             </div>
         </div>
     </div>
