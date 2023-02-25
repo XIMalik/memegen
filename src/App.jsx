@@ -9,11 +9,8 @@ import Home from './pages/Home/Home';
 
 function App() {
   const [count, setCount] = useState(0)
-  const goUp = () => {
-    setCount(count + 1)
-    console.log(count)
-  }
-  
+  let i = []
+
   return(
     <BrowserRouter>
       <Routes>
