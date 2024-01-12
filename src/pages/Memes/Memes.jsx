@@ -17,14 +17,12 @@ export default function Memes() {
   }, []);
 
   return (
-    <div className="">
+    <div className="relative flex flex-col gap-10">
       <Header />
-      <span className="head text-2xl flex justify-center text-white bg-black px-5 py-5 w-[100%] mb-3">
-        Time to cook
-      </span>
-      <span className=" text-sm flex items-center justify-center bg-white">
+      {/* <span className=" text-sm flex items-center justify-center bg-white mt-5">
         Pick an image and create your custom meme
-      </span>
+      </span> */}
+      
       <div className="flex justify-center flex-wrap">
         {data.map((i) => (
           <Memecard title={i.name} img={i.url} />

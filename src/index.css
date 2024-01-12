@@ -1,3 +1,70 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 100px;
+  
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #f8f8f8;
+    border-radius: 100px;
+  
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #f8f8f8;
+    border-radius: 100px;
+  
+  }
+
+.color_select{
+    border-radius: 100px;
+    transition: all 0.2s ease; /* Add a smooth transition for all properties over 0.3 seconds with ease timing function */
+
+}
+.color_select:hover{
+    width: 30px;
+    height: 30px;
+}
+
+.size_select{
+    transition: all 0.2s ease; 
+    border-radius: 100px;
+}
+.size_select:hover{
+    background-color: black;
+    color: white;
+    width: 30px;
+    height: 30px;
+}
+
+.meme_bg {
+    background: linear-gradient(45deg, #c7def0 0%, #13b695 100%);
+    background-size: 200% 200%;
+    height: 100%;
+    width: 100%;
+    animation: background 6s ease infinite;
+}
+
+@keyframes background {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.text_input{
+    border-radius: 12px;
+}
+

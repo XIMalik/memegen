@@ -40,23 +40,18 @@ export default function Edit() {
   return (
     <div>
       <Header />
-      <div className="p-5 flex flex-col gap-3 justify-center items-center">
-        <h1 className="text-center text-black/50 text-sm">
-          You made it to the lab
-        </h1>
-        <h1 className="head text-center text-xl sm:text-3xl">
-          Now, create your masterpiece
-        </h1>
+      <div className="p-5 flex flex-col gap-3 justify-center items-center relative">
         <button
           onClick={go}
-          className="p-3 border-black/10 border-[0.2px] text-black/40 hover:text-white hover:bg-black"
-        >
-          I think i'd rather be a hero
+          className="bg-white rounded-lg p-3 hover:bg-black text-[0px] hover:text-sm ease-in duration-200 hover:text-white absolute top-[18px] w-fit left-10 text-black/40 flex items-center justify-center gap-2 "
+          >
+            <img width="30" height="30" src="https://img.icons8.com/badges/48/left.png" alt="left"/>
+            make a custom meme
         </button>
       </div>
 
-      <div className="grid md:grid-cols-2 p-10 mb-10">
-        <div className="colspan-1 flex justify-center items-center bg-gradient-to-r from-red-900 to-black text-center py-5 w-[100%] h-[100%]">
+      <div className="grid md:grid-cols-2 gap-2 p-10 mb-10">
+        <div className="colspan-1 rounded-lg flex justify-center items-center meme_bg text-center py-5 w-[100%] h-[100%]">
           <div
             ref={memeRef}
             className="w-fit relative mx-auto my-auto overflow-hidden"
@@ -70,7 +65,7 @@ export default function Edit() {
                 {topText}
               </h1>
             </Draggable>
-            <img src={params.get("url")} alt="" className="w-[300px] m-auto" />
+            <img src={params.get("url")} alt="" className="w-[300px] m-auto rounded-lg" />
             <Draggable>
               <h1
                 id="memetext"
@@ -87,7 +82,7 @@ export default function Edit() {
           </div>
         </div>
 
-        <div className="relative  gap-5 flex flex-col items-center colspan-1 border-[0.5px] overflow-scroll border-black/10 border-t-0 sm:border-t-[0.5px]  text-center lg:w-[100%] lg:h-[100%] h-[500px]">
+        <div className="relative rounded-lg  gap-5 flex flex-col items-center colspan-1 border-[0.5px] overflow-scroll border-black/10 border-t-0 sm:border-t-[0.5px]  text-center lg:w-[100%] lg:h-[100%] h-[500px]">
           <span className="head bg-black px-2 py-1 text-white text-xs">
             options
           </span>
@@ -103,14 +98,14 @@ export default function Edit() {
               type="text"
               id="topText"
               onChange={(e) => setTopText(e.target.value)}
-              className=" bg-slate-100 ease-in duration-150 hover:bg-slate-200 border-0 outline-0 p-2 w-[80%] min-w-[300px]"
+              className=" bg-slate-100 text_input ease-in duration-150 hover:bg-slate-200 border-0 outline-0 p-2 w-[80%] min-w-[300px]"
             />
             <input
               placeholder="bottom text"
               type="text"
               id="bottomText"
               onChange={(e) => setBottomText(e.target.value)}
-              className="bg-slate-100 ease-in duration-150 hover:bg-slate-200 border-0 outline-0 p-2 w-[80%] min-w-[300px]"
+              className="bg-slate-100 ease-in text_input duration-150 hover:bg-slate-200 border-0 outline-0 p-2 w-[80%] min-w-[300px]"
             />
           </div>
 
@@ -119,31 +114,31 @@ export default function Edit() {
             <div className="flex justify-center w-fit gap-8 sm:gap-8">
               <button
                 onClick={() => setSize(18)}
-                className="head hover:bg-black hover:text-white w-[25px] h-[25px]"
+                className="head size_select w-[25px] h-[25px]"
               >
                 1
               </button>
               <button
                 onClick={() => setSize(28)}
-                className="head hover:bg-black hover:text-white w-[25px] h-[25px]"
+                className="head size_select w-[25px] h-[25px]"
               >
                 2
               </button>
               <button
                 onClick={() => setSize(38)}
-                className="head hover:bg-black hover:text-white w-[25px] h-[25px]"
+                className="head size_select w-[25px] h-[25px]"
               >
                 3
               </button>
               <button
                 onClick={() => setSize(48)}
-                className="head hover:bg-black hover:text-white w-[25px] h-[25px]"
+                className="head size_select w-[25px] h-[25px]"
               >
                 4
               </button>
               <button
                 onClick={() => setSize(58)}
-                className="head hover:bg-black hover:text-white w-[25px] h-[25px]"
+                className="head size_select w-[25px] h-[25px]"
               >
                 5
               </button>
@@ -153,42 +148,29 @@ export default function Edit() {
           <div className="flex flex-col justify-center gap-5 mb-5">
             <span className="text-sm text-slate-600">
               Alter text color{" "}
-              <span className="text-slate-300">if need be</span>
             </span>
-            <div className=" flex gap-5">
-              <button
-                onClick={() => setColor("green")}
-                className="bg-green-600 w-[25px] h-[25px] "
-              ></button>
-              <button
-                onClick={() => setColor("red")}
-                className="bg-red-600 w-[25px] h-[25px] "
-              ></button>
-              <button
-                onClick={() => setColor("blue")}
-                className="bg-blue-600 w-[25px] h-[25px] "
-              ></button>
-              <button
-                onClick={() => setColor("white")}
-                className="bg-white border-[0.5px] border-solid w-[25px] h-[25px]"
-              ></button>
-              <button
-                onClick={() => setColor("purple")}
-                className="bg-purple-500 border-[0.5px] border-solid w-[25px] h-[25px]"
-              ></button>
-              <button
-                onClick={() => setColor("yellow")}
-                className="bg-yellow-500 border-[0.5px] border-solid w-[25px] h-[25px]"
-              ></button>
+            <div className="flex gap-5 max-w-[300px] flex-wrap items-center justify-center">
+              <button onClick={() => setColor("green")} className="bg-green-600 w-[25px] h-[25px] color_select"></button>
+              <button onClick={() => setColor("red")} className="bg-red-600 w-[25px] h-[25px] color_select"></button>
+              <button onClick={() => setColor("blue")} className="bg-blue-600 w-[25px] h-[25px] color_select"></button>
+              <button onClick={() => setColor("white")} className="bg-white border-[0.5px] border-solid w-[25px] h-[25px] color_select"></button>
+              <button onClick={() => setColor("purple")} className="bg-purple-500 border-[0.5px] border-solid w-[25px] h-[25px] color_select"></button>
+              <button onClick={() => setColor("yellow")} className="bg-yellow-500 border-[0.5px] border-solid w-[25px] h-[25px] color_select"></button>
+              <button onClick={() => setColor("pink")} className="bg-pink-500 border-[0.5px] border-solid w-[25px] h-[25px] color_select"></button>
+              <button onClick={() => setColor("orange")} className="bg-orange-500 border-[0.5px] border-solid w-[25px] h-[25px] color_select"></button>
+              <button onClick={() => setColor("cyan")} className="bg-cyan-500 border-[0.5px] border-solid w-[25px] h-[25px] color_select"></button>
+              <button onClick={() => setColor("teal")} className="bg-teal-500 border-[0.5px] border-solid w-[25px] h-[25px] color_select"></button>
+              <button onClick={() => setColor("brown")} className="bg-black/50 border-[0.5px] border-solid w-[25px] h-[25px] color_select"></button>
+              <button onClick={() => setColor("gray")} className="bg-gray-500 border-[0.5px] border-solid w-[25px] h-[25px] color_select"></button>
             </div>
-          </div>
 
-          <span className="text-sm text-slate-600">Hit the button!</span>
+          </div>
           <button
             onClick={(e) => exportComponentAsJPEG(memeRef)}
-            className="py-3 bg-black text-green-100 mt-1 w-[80%] min-w-[300px] ease-in duration-150 hover:bg-red-900"
-          >
-            Download your custom <span className="head">grfx</span>
+            className="p-2 bg-black text-white mt-1 w-[80%] min-w-[300px] flex items-center justify-center gap-2 rounded-lg mb-2"
+            >
+                          <img width="28" height="28" src="https://img.icons8.com/plasticine/100/download.png" alt="download"/>
+            Download
           </button>
         </div>
       </div>
