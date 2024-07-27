@@ -46,17 +46,16 @@ export default function Custom() {
 
   return (
     <div className="flex flex-col">
-
       <Header />
       <button
             onClick={go}
-            className="bg-white rounded-lg p-3 hover:bg-black text-[0px] hover:text-sm ease-in duration-200 hover:text-white absolute top-[100px] w-fit left-10 text-black/40 flex items-center justify-center gap-2 "
+            className="bg-white rounded-lg p-3 my-5 hover:bg-black text-[0px] hover:text-sm ease-in duration-200 hover:text-white w-fit ml-10 text-black/40 flex items-center justify-center gap-2 "
           >
             <img width="30" height="30" src="https://img.icons8.com/badges/48/left.png" alt="left"/>
             meme gallery
           </button>
 
-      <div className="flex flex-col gap-5 justify-center items-center mt-12 w-[100%] p-10">
+      <div className="flex flex-col gap-5 justify-center items-center w-[100%] px-10 mb-10">
   
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 place-items-center w-[100%] ">
           <div className="colspan-1 rounded-lg meme_bg w-[100%] h-[100%] flex justify-center items-center">

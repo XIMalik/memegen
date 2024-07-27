@@ -38,19 +38,17 @@ export default function Edit() {
     nav("/custom");
   };
   return (
-    <div>
+    <div className='flex flex-col'>
       <Header />
-      <div className="p-5 flex flex-col gap-3 justify-center items-center relative">
         <button
           onClick={go}
-          className="bg-white rounded-lg p-3 hover:bg-black text-[0px] hover:text-sm ease-in duration-200 hover:text-white absolute top-[18px] w-fit left-10 text-black/40 flex items-center justify-center gap-2 "
+          className="bg-white rounded-lg p-3  hover:bg-black text-[0px] hover:text-sm ease-in duration-200 hover:text-white my-5 w-fit ml-10 text-black/40 flex items-center justify-center gap-2 "
           >
             <img width="30" height="30" src="https://img.icons8.com/badges/48/left.png" alt="left"/>
             make a custom meme
         </button>
-      </div>
 
-      <div className="grid md:grid-cols-2 gap-2 p-10 mb-10">
+      <div className="grid md:grid-cols-2 gap-2 px-10 mb-10">
         <div className="colspan-1 rounded-lg flex justify-center items-center meme_bg text-center py-5 w-[100%] h-[100%]">
           <div
             ref={memeRef}
